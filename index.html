@@ -17,16 +17,31 @@
   <iframe id="iframeId" name="iframeId" src="banner.html"></iframe>
 
   <script type="text/javascript">
-      var iframeDoc;
-      if (window.frames && window.frames.iframeId &&
-          (iframeDoc = window.frames.iframeId.document)) {
-          var iframeBody = iframeDoc.body;
-          var ifromContent = iframeBody.innerHTML;
-      }
+  // Find all iframes
+var $iframes = $( "iframe" );
+
+// Find &#x26; save the aspect ratio for all iframes
+$iframes.each(function () {
+$( this ).data( "ratio", this.height / this.width )
+// Remove the hardcoded width &#x26; height attributes
+.removeAttr( "width" )
+.removeAttr( "height" );
+});
+
+// Resize the iframes when the window is resized
+$( window ).resize( function () {
+$iframes.each( function() {
+// Get the parent container&#x27;s width
+var width = $( this ).parent().width();
+$( this ).width( width )
+  .height( width * $( this ).data( "ratio" ) );
+});
+// Resize to fix all iframes on page load.
+}).resize();
   </script>
 
 
-  <h2>Lorem Ipsum, Motherfucker7!</h2>
+  <h2>Lorem Ipsum, Motherfucker8!</h2>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel rerum, atque officia, reprehenderit accusamus aliquam quibusdam minima expedita, doloribus, blanditiis pariatur dignissimos omnis exercitationem. Ad minima excepturi sint esse dolore.
   </p>
