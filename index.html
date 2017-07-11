@@ -6,21 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>iFrame bullshit</title>
 
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
   <script type="text/javascript">
-  function getFrameContents(){
-   var iFrame =  document.getElementById('idIframe');
-   var iFrameBody;
-   if ( iFrame.contentDocument )
-   { // FF
-     iFrameBody = iFrame.contentDocument.getElementsByTagName('body')[0];
-   }
-   else if ( iFrame.contentWindow )
-   { // IE
-     iFrameBody = iFrame.contentWindow.document.getElementsByTagName('body')[0];
-   }
-    alert(iFrameBody.innerHTML);
- }
+
+  $(function(){
+    $(window).on('load resize', adjustIframe);
+  });
+
+  function adjustIframe() {
+    $(parent.document.getElementById("responsive-iframe")).css("height", $("html").css("height"));
+  }
+
   </script>
 
 
@@ -28,13 +25,11 @@
 </head>
 <body>
 
-  <div>
 
-  <iframe src="banner.html" id="idIframe" width="100%" onload="iframeLoaded()" style="border: none;" allowfullscreen> </iframe>
+  <iframe id="responsive-iframe" src="banner.html" width="100%" style="border: none;" allowfullscreen> </iframe>
 
-  </div>
 
-  <h2>Lorem Ipsum, Motherfucker2!</h2>
+  <h2>Lorem Ipsum, Motherfucker3!</h2>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel rerum, atque officia, reprehenderit accusamus aliquam quibusdam minima expedita, doloribus, blanditiis pariatur dignissimos omnis exercitationem. Ad minima excepturi sint esse dolore.
   </p>
