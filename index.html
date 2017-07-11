@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>iFrame bullshit</title>
+
+
+  <script type="text/javascript">
+    function iframeLoaded() {
+        var iFrameID = document.getElementById('idIframe');
+        if(iFrameID) {
+
+              iFrameID.height = "";
+              iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
+        }
+    }
+  </script>
+
+
+
+</head>
+<body>
+
+  <div>
+
+  <iframe src="banner.html" id="idIframe" width="100%" onload="iframeLoaded()" style="border: none;" allowfullscreen> </iframe>
+
+  </div>
+
+  <h2>Lorem Ipsum, Motherfucker!</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel rerum, atque officia, reprehenderit accusamus aliquam quibusdam minima expedita, doloribus, blanditiis pariatur dignissimos omnis exercitationem. Ad minima excepturi sint esse dolore.
+  </p>
+
+
+
+
+
+</body>
+</html>
