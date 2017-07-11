@@ -10,13 +10,27 @@
 
   <script type="text/javascript">
 
-  $(function(){
-    $(window).on('load resize', adjustIframe);
+  // Find all iframes
+  var $iframes = $( "iframe" );
+
+  // Find &#x26; save the aspect ratio for all iframes
+  $iframes.each(function () {
+    $( this ).data( "ratio", this.height / this.width )
+      // Remove the hardcoded width &#x26; height attributes
+      .removeAttr( "width" )
+      .removeAttr( "height" );
   });
 
-  function adjustIframe() {
-    $(parent.document.getElementById("responsive-iframe")).css("height", $("html").css("height"));
-  }
+  // Resize the iframes when the window is resized
+  $( window ).resize( function () {
+    $iframes.each( function() {
+      // Get the parent container&#x27;s width
+      var width = $( this ).parent().width();
+      $( this ).width( width )
+        .height( width * $( this ).data( "ratio" ) );
+    });
+  // Resize to fix all iframes on page load.
+  }).resize();
 
   </script>
 
@@ -29,7 +43,7 @@
   <iframe id="responsive-iframe" src="banner.html" width="100%" style="border: none;" allowfullscreen> </iframe>
 
 
-  <h2>Lorem Ipsum, Motherfucker3!</h2>
+  <h2>Lorem Ipsum, Motherfucker5!</h2>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel rerum, atque officia, reprehenderit accusamus aliquam quibusdam minima expedita, doloribus, blanditiis pariatur dignissimos omnis exercitationem. Ad minima excepturi sint esse dolore.
   </p>
