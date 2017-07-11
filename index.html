@@ -8,14 +8,19 @@
 
 
   <script type="text/javascript">
-    function iframeLoaded() {
-        var iFrameID = document.getElementById('idIframe');
-        if(iFrameID) {
-
-              iFrameID.height = "";
-              iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
-        }
-    }
+  function getFrameContents(){
+   var iFrame =  document.getElementById('id_description_iframe');
+   var iFrameBody;
+   if ( iFrame.contentDocument )
+   { // FF
+     iFrameBody = iFrame.contentDocument.getElementsByTagName('body')[0];
+   }
+   else if ( iFrame.contentWindow )
+   { // IE
+     iFrameBody = iFrame.contentWindow.document.getElementsByTagName('body')[0];
+   }
+    alert(iFrameBody.innerHTML);
+ }
   </script>
 
 
