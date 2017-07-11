@@ -7,15 +7,33 @@
   <title>iFrame bullshit</title>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style>
+.banner {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
 
+.banner iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+</style>
 
 </head>
 <body>
 
 
+<div class="banner">
+
 
   <iframe id="iframeId" name="iframeId" src="banner.html"></iframe>
-
+</div>
   <script type="text/javascript">
   // Find all iframes
 var $iframes = $( "iframe" );
@@ -41,7 +59,7 @@ $( this ).width( width )
   </script>
 
 
-  <h2>Lorem Ipsum, Motherfucker8!</h2>
+  <h2>Lorem Ipsum, Motherfucker9!</h2>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel rerum, atque officia, reprehenderit accusamus aliquam quibusdam minima expedita, doloribus, blanditiis pariatur dignissimos omnis exercitationem. Ad minima excepturi sint esse dolore.
   </p>
