@@ -21,21 +21,19 @@
   width: 100%;
   height: 100%;
 }
+body {
+  background: red;
+
+
+}
 
 
 </style>
 
-</head>
-<body>
 
 
-<div class="banner">
-
-
-  <iframe id="iframeId" name="iframeId" src="banner.html"></iframe>
-</div>
-  <script type="text/javascript">
-  // Find all iframes
+<script type="text/javascript">
+// Find all iframes
 var $iframes = $( "iframe" );
 
 // Find &#x26; save the aspect ratio for all iframes
@@ -52,14 +50,27 @@ $iframes.each( function() {
 // Get the parent container&#x27;s width
 var width = $( this ).parent().width();
 $( this ).width( width )
-  .height( width * $( this ).data( "ratio" ) );
+.height( width * $( this ).data( "ratio" ) );
 });
 // Resize to fix all iframes on page load.
 }).resize();
-  </script>
+</script>
 
 
-  <h2>Lorem Ipsum, Motherfucker10!</h2>
+
+</head>
+<body>
+
+
+<div class="banner">
+
+
+  <iframe id="iframeId" name="iframeId" src="banner.html"></iframe>
+</div>
+
+
+
+  <h2>Lorem Ipsum, Motherfucker11!</h2>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel rerum, atque officia, reprehenderit accusamus aliquam quibusdam minima expedita, doloribus, blanditiis pariatur dignissimos omnis exercitationem. Ad minima excepturi sint esse dolore.
   </p>
