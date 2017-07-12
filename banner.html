@@ -13,11 +13,10 @@
 <script src="jquery.responsiveiframe.js"></script>
 
 <script>
-  ;(function($){
-      $(function(){
-        $('#myIframeID').responsiveIframe({ xdomain: '*'});
-      });
-  })(jQuery);
+var ri = responsiveIframe();
+ri.allowResponsiveEmbedding();
+
+
 </script>
 
 <!-- ############## -->

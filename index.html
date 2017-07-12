@@ -9,22 +9,33 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <!-- responsiveiframe -->
-
 <script src="jquery.responsiveiframe.js"></script>
 
-  <script>
-  var ri = responsiveIframe();
-  ri.allowResponsiveEmbedding();
+
+
+
+
+<script>
+;(function($){
+    $(function(){
+      $('#myIframe').responsiveIframe({ xdomain: '*'});
+    });
+})(jQuery);
 </script>
 
 <!-- ################## -->
 
-<!-- <style>iframe{width:100%}</style> -->
+<style>iframe{border: 0;}
+
+</style>
+
+
+
 </head>
 <body>
 
 
-  <iframe id="myIframe" src="banner.html" scrolling="no"></iframe>
+  <iframe id="myIframe" src="banner.html" width="100%" height="100%" scrolling="no" allowfullscreen></iframe>
 
 
 
